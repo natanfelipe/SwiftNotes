@@ -10,6 +10,21 @@ import UIKit
 
 class NoteViewController: UIViewController {
     
+    @IBOutlet weak var noteTextField: UITextField!
+    
+    @IBAction func saveButton(_ sender: Any) {
+        
+        if let newNote = noteTextField.text {
+            let noteUserDefaults = NotesUserDefaults()
+            noteUserDefaults.addNote(note: newNote)
+            noteTextField.text = ""
+        }
+        
+    }
+    
+    
+    /**/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
